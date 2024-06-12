@@ -17,10 +17,10 @@ from art.metrics.metrics import clever_u
 
 import plotly.express as px
 
-from regularization.distributed_train import load_checkpoint
-from regularization.pkg.dataset import get_CIFAR10, get_CIFAR100, get_ImageNetVal
-from regularization.pkg.mutils import ResNetNormed
-from regularization.pkg.resnet import ResNet18
+from train.distributed_train import load_checkpoint
+from train.pkg.dataset import get_CIFAR10, get_CIFAR100, get_ImageNetVal
+from train.pkg.mutils import ResNetNormed
+from train.pkg.resnet import ResNet18
 
 
 
@@ -129,12 +129,12 @@ def set_seeds(seed):
 
 def get_model(model_name, params):
     if 'loss' in model_name.lower():
-        model = get_rg_model(model_name, './regularization/checkpoints')
+        model = get_rg_model(model_name, './train/checkpoints')
     else:
        model = get_prt_model(model_name, params)
     return model
 
-def get_rg_model(model_name, path='./regularization/checkpoints'):
+def get_rg_model(model_name, path='./train/checkpoints'):
     model = ResNet18()
     ckptpath = f'{path}/{model_name}.pt'
     model,_ = load_checkpoint(model,ckptpath, intest=True)
