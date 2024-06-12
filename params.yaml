@@ -1,0 +1,31 @@
+seed: 1380
+# Standard|Wang2023Better_WRN-28-10|Rony2019Decoupling, Rebuffi2021Fixing_28_10_cutmix_ddpm
+# ResNet50,Augustin2020Adversarial, Engstrom2019Robustness
+# ResNet18,Sehwag2021Proxy_R18
+# StandardWRN28-4, Ding2020MMA
+# PreActResNet-18, Rice2020Overfitting, Rebuffi2021Fixing_R18_cutmix_ddpm, Rade2021Helper_R18_ddpm
+#XT: 'XCiT-L12', 'XCiT-M12', 'XCiT-S12'#Debenedetti2022Light_XCiT-L12
+
+model_name: Cui2023Decoupled_WRN-28-10 #Sehwag2021Proxy_R18 # Xu2023Exploring_WRN-28-10 cifar10_resnet20
+
+norm_thread: Linf # Linf|L2
+
+dataset_name: cifar10
+
+batch_size: 128 # put a value that gpu memory can bear
+
+attack: fab #replace with 'autoattack' for auto-attack
+
+results_root_path:  /home-local2/jongn2.extra.nobkp/results_uncert/rbLinf # a folder path to save the results /home-local2/jongn2.extra.nobkp/adveval
+
+source_root_path:  /home-local2/jongn2.extra.nobkp/results_uncert/rbLinf  # a folder path to save the results
+
+n_batches: 1
+
+batch_id: 0
+
+is_train: False #part of validation set
+
+unsup_version: True
+
+task: "get_test_logits" #get_valid_logits, timming predict

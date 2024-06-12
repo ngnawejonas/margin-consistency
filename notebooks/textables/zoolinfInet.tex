@@ -1,0 +1,34 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lllllll}
+    \# & Model ID                                 & Paper                                                                                                         & Clean accuracy & Robust accuracy & Architecture          & Venue                                                      \\
+    1  & Liu2023Comprehensive\_Swin-L             & A Comprehensive Study on Robustness of Image Classification Models: Benchmarking and Rethinking               & 78.92\%        & 59.56\%         & Swin-L                & arXiv, Feb 2023                                            \\
+    2  & Bai2024MixedNUTS                         & MixedNUTS: Training-Free Accuracy-Robustness Balance via Nonlinearly Mixed Classifiers                        & 81.48\%        & 58.50\%         & ConvNeXtV2-L + Swin-L & arXiv, Feb 2024                                            \\
+    3  & Liu2023Comprehensive\_ConvNeXt-L         & A Comprehensive Study on Robustness of Image Classification Models: Benchmarking and Rethinking               & 78.02\%        & 58.48\%         & ConvNeXt-L            & arXiv, Feb 2023                                            \\
+    4  & Singh2023Revisiting\_ConvNeXt-L-ConvStem & Revisiting Adversarial Training for ImageNet: Architectures, Training and Generalization across Threat Models & 77.00\%        & 57.70\%         & ConvNeXt-L + ConvStem & NeurIPS 2023                                               \\
+    5  & Liu2023Comprehensive\_Swin-B             & A Comprehensive Study on Robustness of Image Classification Models: Benchmarking and Rethinking               & 76.16\%        & 56.16\%         & Swin-B                & arXiv, Feb 2023                                            \\
+    6  & Singh2023Revisiting\_ConvNeXt-B-ConvStem & Revisiting Adversarial Training for ImageNet: Architectures, Training and Generalization across Threat Models & 75.90\%        & 56.14\%         & ConvNeXt-B + ConvStem & NeurIPS 2023                                               \\
+    7  & Liu2023Comprehensive\_ConvNeXt-B         & A Comprehensive Study on Robustness of Image Classification Models: Benchmarking and Rethinking               & 76.02\%        & 55.82\%         & ConvNeXt-B            & arXiv, Feb 2023                                            \\
+    8  & Singh2023Revisiting\_ViT-B-ConvStem      & Revisiting Adversarial Training for ImageNet: Architectures, Training and Generalization across Threat Models & 76.30\%        & 54.66\%         & ViT-B + ConvStem      & NeurIPS 2023                                               \\
+    9  & Singh2023Revisiting\_ConvNeXt-S-ConvStem & Revisiting Adversarial Training for ImageNet: Architectures, Training and Generalization across Threat Models & 74.10\%        & 52.42\%         & ConvNeXt-S + ConvStem & NeurIPS 2023                                               \\
+    10 & Singh2023Revisiting\_ConvNeXt-T-ConvStem & Revisiting Adversarial Training for ImageNet: Architectures, Training and Generalization across Threat Models & 72.72\%        & 49.46\%         & ConvNeXt-T + ConvStem & NeurIPS 2023                                               \\
+    11 & Peng2023Robust                           & Robust Principles: Architectural Design Principles for Adversarially Robust CNNs                              & 73.44\%        & 48.94\%         & RaWideResNet-101-2    & BMVC 2023                                                  \\
+    12 & Singh2023Revisiting\_ViT-S-ConvStem      & Revisiting Adversarial Training for ImageNet: Architectures, Training and Generalization across Threat Models & 72.56\%        & 48.08\%         & ViT-S + ConvStem      & NeurIPS 2023                                               \\
+    13 & Debenedetti2022Light\_XCiT-L12           & A Light Recipe to Train Robust Vision Transformers                                                            & 73.76\%        & 47.60\%         & XCiT-L12              & arXiv, Sep 2022                                            \\
+    14 & Debenedetti2022Light\_XCiT-M12           & A Light Recipe to Train Robust Vision Transformers                                                            & 74.04\%        & 45.24\%         & XCiT-M12              & arXiv, Sep 2022                                            \\
+    15 & Debenedetti2022Light\_XCiT-S12           & A Light Recipe to Train Robust Vision Transformers                                                            & 72.34\%        & 41.78\%         & XCiT-S12              & arXiv, Sep 2022                                            \\
+    16 & Chen2024Data\_WRN\_50\_2                 & Data filtering for efficient adversarial training                                                             & 68.76\%        & 40.60\%         & WideResNet-50-2       & Pattern Recognition 2024                                   \\
+    17 & Salman2020Do\_50\_2                      & Do Adversarially Robust ImageNet Models Transfer Better?                                                      & 68.46\%        & 38.14\%         & WideResNet-50-2       & NeurIPS 2020                                               \\
+    18 & Salman2020Do\_R50                        & Do Adversarially Robust ImageNet Models Transfer Better?                                                      & 64.02\%        & 34.96\%         & ResNet-50             & NeurIPS 2020                                               \\
+    19 & Engstrom2019Robustness                   & Robustness library                                                                                            & 62.56\%        & 29.22\%         & ResNet-50             & \begin{tabular}[c]{@{}l@{}}GitHub,\\ Oct 2019\end{tabular} \\
+    20 & Wong2020Fast                             & Fast is better than free: Revisiting adversarial training                                                     & 55.62\%        & 26.24\%         & ResNet-50             & ICLR 2020                                                  \\
+    21 & Salman2020Do\_R18                        & Do Adversarially Robust ImageNet Models Transfer Better?                                                      & 52.92\%        & 25.32\%         & ResNet-18             & NeurIPS 2020                                               \\
+    22 & Standard\_R50                            & Standardly trained model                                                                                      & 76.52\%        & 0.00\%          & ResNet-50             &                                                           
+    \end{tabular}%
+    }
+    \caption{}
+    \label{tab:my-table}
+    \end{table}

@@ -1,0 +1,2 @@
+loss,clean acc,pgd,fab acc,auto-attack
+ce,94.05,0.15,0.0,0.0
