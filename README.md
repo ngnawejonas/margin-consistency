@@ -1,5 +1,5 @@
 # Margin Consistency
-Paper: "Detecting Brittle Decisions for Free: Leveraging Margin Consistency in Deep Robust Classifiers."
+Paper: ["Detecting Brittle Decisions for Free: Leveraging Margin Consistency in Deep Robust Classifiers."](https://arxiv.org/abs/2406.18451)
 
 1/`$pip install -r requirements.txt`
 
@@ -10,3 +10,5 @@ Paper: "Detecting Brittle Decisions for Free: Leveraging Margin Consistency in D
 3/`$python3 eval.py`
 
 Or use `run.sh` file
+
+4/ Use notebook/xpLinf-TrainDNet.ipynb for analysis
