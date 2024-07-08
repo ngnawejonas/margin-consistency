@@ -90,9 +90,10 @@ def parse_args(args: list) -> argparse.Namespace:
     )
     return parser.parse_args(args)
 
+
 class ModelWrapper(torch.nn.Module):
     fc_head: torch.nn.Linear
-    def __init__(self, model):
+    def __init__(self, model, xcit=False):
         super().__init__()
         if isinstance(model, ResNetNormed):
             name, module = list(model.named_children())[-1]
@@ -100,23 +101,30 @@ class ModelWrapper(torch.nn.Module):
             name, fc_head = list(module.named_children())[-1]
             setattr(m, name, torch.nn.Identity())
         else:
-            name, fc_head = list(model.named_children())[-1]
-            setattr(model, name, torch.nn.Identity())
+            M = model[1] if xcit else model
+            name, fc_head = list(M.named_children())[-1]
+            setattr(M, name, torch.nn.Identity())
         self.embedding = model 
         self.e1 = None
         self.fc_head = fc_head
 
+
     def forward(self, x):
         self.e1 = self.embedding(x)
+        # x = torch.flatten(self.e1, 1)
+        # print(self.e1.shape, x.shape, self.get_embedding_dim())
         return self.fc_head(self.e1)
 
-    def get_embedding(self):
+    def get_embedding(self, x=None):
         if self.e1 is not None:
             e1 = self.e1.squeeze().clone()
             self.e1 = None
             return e1
         else:
-            raise ValueError('Forward should be executed first')
+            assert x is not None
+            self.forward(self.x)
+            return self.get_embedding()
+            # raise ValueError('Forward should be executed first')
 
     def get_embedding_dim(self):
         return self.fc_head.in_features
@@ -192,7 +200,8 @@ def run_trial(
     #Load Model
     print(model_name)
     model = get_model(model_name, params)
-    model = ModelWrapper(model)
+    xcit_flag=True if 'XCiT' in model_name else model_name
+    model = ModelWrapper(model, xcit_flag)
     model = model.to(device)
     model.eval()
     print("Model Loaded")
