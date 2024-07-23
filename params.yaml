@@ -6,7 +6,7 @@ seed: 1380
 # PreActResNet-18, Rice2020Overfitting, Rebuffi2021Fixing_R18_cutmix_ddpm, Rade2021Helper_R18_ddpm
 #XT: 'XCiT-L12', 'XCiT-M12', 'XCiT-S12'#Debenedetti2022Light_XCiT-L12
 
-model_name: Cui2023Decoupled_WRN-28-10 #Sehwag2021Proxy_R18 # Xu2023Exploring_WRN-28-10 cifar10_resnet20
+model_name: Ding2020MMA # Xu2023Exploring_WRN-28-10 cifar10_resnet20
 
 norm_thread: Linf # Linf|L2
 
@@ -28,4 +28,4 @@ is_train: False #part of validation set
 
 unsup_version: True
 
-task: "get_test_logits" #get_valid_logits, timming predict
+task: "default" #get_valid_logits, timming predict

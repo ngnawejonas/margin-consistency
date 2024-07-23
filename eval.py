@@ -200,7 +200,7 @@ def run_trial(
     #Load Model
     print(model_name)
     model = get_model(model_name, params)
-    xcit_flag=True if 'XCiT' in model_name else model_name
+    xcit_flag=True if 'XCiT' in model_name else False
     model = ModelWrapper(model, xcit_flag)
     model = model.to(device)
     model.eval()
@@ -244,7 +244,7 @@ def run_trial(
         acc, val_out = get_logits(model, t_set, device, params['batch_size'])
         print(f"{params['task']}/Acc.  {100*acc:.2f}")
         torch.save(val_out, os.path.join(resultsDirName, f'val_logit_{save_tag}.pt'))
-        torch.save(t_set.targets, os.path.join(resultsDirName, f'val_ytrue_{save_tag}.pt'))
+        torch.save(t_set.Y, os.path.join(resultsDirName, f'val_ytrue_{save_tag}.pt'))
         exit(0)
     #
     check_acc(model, test_loader, device)

@@ -1,0 +1,10 @@
+/data
+/regularization/data
+/models
+/results
+*.out
+*__pycache__*
+*o.txt
+*test.txt
+*.pt
+*wandb*
