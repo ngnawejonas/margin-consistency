@@ -217,7 +217,7 @@ def run_trial(
         valid_size= 5000
         _ , val_set = torch.utils.data.random_split(train_set, [len(train_set) - valid_size, valid_size])
     elif params['dataset_name'] == 'imagenet':
-        datapath='/home-local2/jongn2.extra.nobkp/imagenet'
+        datapath=params['imagenet_path']
         test_set = get_ImageNetVal(datapath)
         if params['task'] != 'get_test_logits':
             subsetsize= 1000
