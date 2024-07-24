@@ -12,6 +12,8 @@ norm_thread: Linf # Linf|L2
 
 dataset_name: cifar10
 
+imagenet_path: /home-local2/jongn2.extra.nobkp/imagenet
+
 batch_size: 128 # put a value that gpu memory can bear
 
 attack: fab #replace with 'autoattack' for auto-attack
