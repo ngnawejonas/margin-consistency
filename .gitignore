@@ -1,5 +1,5 @@
 /data
-/regularization/data
+/train/data
 /models
 /results
 *.out

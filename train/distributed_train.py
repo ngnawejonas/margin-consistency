@@ -25,10 +25,10 @@ import torch
 from torch.utils.data.distributed import DistributedSampler
 from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.distributed import init_process_group, destroy_process_group
-from .pkg import losses
-from .pkg.dataset import get_CIFAR10, get_MNIST
-from .pkg.small_cnn import SmallCNN
-from .pkg.resnet import ResNet18
+from pkg import losses
+from pkg.dataset import get_CIFAR10, get_MNIST
+from pkg.small_cnn import SmallCNN
+from pkg.resnet import ResNet18
 
 
 def parse_args(args: list) -> argparse.Namespace:
