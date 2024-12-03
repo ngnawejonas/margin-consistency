@@ -4,3 +4,4 @@ wandb
 plotly
 torchvision==0.13.1
 numpy==1.26.4
+torchmetrics==0.6.0

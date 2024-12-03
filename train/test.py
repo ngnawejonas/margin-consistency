@@ -194,9 +194,11 @@ def write_to_csv(params, metric, metric_value):
     if len(df[df['loss'] == lossname])>0:
         df.loc[df['loss']==lossname, metric] = metric_value
     else:
-        new_row = {'loss':lossname}
-        new_row[metric] = metric_value
-        df = df.append(new_row, ignore_index=True)
+        new_row = {'loss':[lossname]}
+        new_row[metric] = [metric_value]
+        row_to_append = pd.DataFrame(new_row)
+        # Use pd.concat instead of append
+        df = pd.concat([df, row_to_append], ignore_index=True)
     df.to_csv(resfile, index=False)
 
 
@@ -214,6 +216,8 @@ def eval_auto_attack(model, test_loader,
     if version == 'pgd':
         pgd_attack(model, test_loader, params, device)
         return
+    if not os.path.exists('./autoattack_dir'):
+        os.makedirs('./autoattack_dir')
     model.eval()
     ##
     x_test, y_test = get_XY(test_loader)                       
